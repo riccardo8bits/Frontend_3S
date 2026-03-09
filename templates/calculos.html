@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1>Escolha uma opção de cálculo</h1>
+
+<div class="calculos">
+
+    <a href="{{ url_for('operacoes') }}">
+        <div class="card_calculo card justify-content-center align-items-center">
+            <i class="icon_calculo bi bi-calculator"></i>
+            <h3>Operações Aritméticas</h3>
+        </div>
+    </a>
+
+    <a href="{{ url_for('geometria') }}">
+        <div class="card_calculo card justify-content-center align-items-center">
+            <div class="d-flex">
+                <i class="icon_calculo bi bi-circle"></i>
+                <i class="icon_calculo bi bi-square"></i>
+                <i class="icon_calculo bi bi-triangle"></i>
+            </div>
+
+            <h3>Geometria</h3>
+        </div>
+    </a>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<div class="carrosel d-flex overflow-hidden">
+
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active bg-dark" data-bs-interval="2000">
+                <img src="/static/img/kart.png" class="d-block w-100 opacity-50" alt="...">
+            </div>
+            <div class="carousel-item bg-dark" data-bs-interval="2000">
+                <img src="/static/img/circuito_kart.png" class="d-block w-100 opacity-50" alt="...">
+            </div>
+            <div class="carousel-item bg-dark" data-bs-interval="2000">
+                <img src="/static/img/circuito_kart.png" class="d-block w-100 opacity-50" alt="...">
+            </div>
+            <div class="carousel-item bg-dark" data-bs-interval="2000">
+                <img src="/static/img/lotus.png" class="d-block w-100 opacity-50" alt="...">
+            </div>
+            <div class="carousel-item bg-dark" data-bs-interval="2000">
+                <img src="/static/img/pista_kart.png" class="d-block w-100 opacity-50" alt="...">
+            </div>
+            <div class="carousel-item bg-dark" data-bs-interval="2000">
+                <img src="/static/img/kart_perto.png" class="d-block w-100 opacity-50" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="w-100 h-100 position-absolute d-flex flex-column justify-content-evenly">
+        <p class="title-senai text-white display-1 text-center">Pilotagem profissional de Kart</p>
+        <p class="subtitle-senai text-white display-6 text-center">Correr para viver</p>
+    </div>
+
+
+</div>
+
+<div class="cursos">
+
+    <div class="curso-text col-8 d-flex flex-column justify-content-center align-items-center">
+        <h1 class="title1">Piloto Júnior</h1>
+        <p class="texto">Desenvolvimento Técnico
+            Durante os treinos, o piloto aprende a manter postura adequada no kart, olhar para a saída das curvas,
+            acelerar progressivamente e frear corretamente. Workshops e orientações de técnicos ajudam a corrigir erros
+            e aprimorar técnicas de pilotagem, como controle de tração e traçado ideal
+            . O acompanhamento de coaches experientes também é comum, dando ênfase a segurança e ao controle
+            emocional</p>
+    </div>
+
+    <div class="curso-img bg-dark-4">
+        <img src="/static/img/kart_horizontal.png" class="w-100 h-100">
+    </div>
+
+</div>
+
+<div class="cursos">
+
+    <div class="curso-img bg-dark-4">
+        <img src="/static/img/kart_duo.png" class="w-100 h-100">
+    </div>
+
+    <div class="curso-text col-8 d-flex flex-column justify-content-center align-items-center">
+        <h1 class="title1">Piloto Intermediário</h1>
+        <p class="texto">O curso Piloto Intermediário de Kart oferece uma experiência completa para quem já possui
+            conhecimentos básicos de pilotagem e deseja evoluir para um nível mais competitivo. Durante o curso, os
+            alunos desenvolvem habilidades técnicas, físicas e mentais essenciais para se destacarem nas pistas de kart,
+            enquanto aprendem estratégias de corrida avançadas e análise de desempenho..</p>
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1>Geometria</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-error px-3">
+                {% for category, message in messages %}
+                    <div class="alert {{ category }} alert-dismissible fade show px-5" role="alert">
+                      <strong>{{ message }}</strong>.
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+<div class="formas d-flex gap-3 justify-content-center px-2">
+
+    <div class="card_operacao w-100">
+        <h2>Triângulo Equilatero</h2>
+        <h4>Área</h4>
+        <form class="form-somar" action="{{ url_for('triangulo_area') }}" method="post">
+            <label>
+                <input placeholder="Digite o lado (cm)" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if area is defined %}
+                Área = {{ area }} cm
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Calcular</button>
+        </form>
+
+        <h4>Perímetro</h4>
+        <form class="form-somar" action="{{ url_for('triangulo_perimetro') }}" method="post">
+            <label>
+                <input placeholder="Digite o lado (cm)" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if perimetro is defined %}
+                Perimetro = {{ perimetro }} cm
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Calcular</button>
+        </form>
+        <div class="accordion p-1" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button text-bg-secondary" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <i class="bi bi-info-circle me-1" data-bs-toggle="tooltip" data-bs-title="t"></i>  Como calcular?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body text-start">
+                        <h5 class="text-center">Área</h5>
+                        <p>Para calcular a área do triângulo equilatero é necessário elevar o lado ao quadrado multiplicar pela raiz de 3 e dividir por 4.</p>
+                        <h5 class="text-center">Perímetro</h5>
+                        <p>Para calcular o perímetro do triângulo equilatero é necessário multiplicar o lado por 3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card_operacao w-100">
+        <h2>Círculo</h2>
+        <h4>Área</h4>
+        <form class="form-somar" action="{{ url_for('triangulo_area') }}" method="post">
+            <label>
+                <input placeholder="Digite o lado (cm)" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if area is defined %}
+                Área = {{ area }} cm
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Calcular</button>
+        </form>
+
+        <h4>Perímetro</h4>
+        <form class="form-somar" action="{{ url_for('triangulo_perimetro') }}" method="post">
+            <label>
+                <input placeholder="Digite o lado (cm)" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if perimetro is defined %}
+                Perimetro = {{ perimetro }} cm
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Calcular</button>
+        </form>
+
+    </div>
+
+    <div class="card_operacao w-100">
+        <h2>Quadrado</h2>
+        <h4>Área</h4>
+        <form class="form-somar" action="{{ url_for('triangulo_area') }}" method="post">
+            <label>
+                <input placeholder="Digite o lado (cm)" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if area is defined %}
+                Área = {{ area }} cm
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Calcular</button>
+        </form>
+
+        <h4>Perímetro</h4>
+        <form class="form-somar" action="{{ url_for('triangulo_perimetro') }}" method="post">
+            <label>
+                <input placeholder="Digite o lado (cm)" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if perimetro is defined %}
+                Perimetro = {{ perimetro }} cm
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Calcular</button>
+        </form>
+
+    </div>
+
+    <div class="card_operacao w-100">
+        <h2>Hexágono</h2>
+        <h4>Área</h4>
+        <form class="form-somar" action="{{ url_for('triangulo_area') }}" method="post">
+            <label>
+                <input placeholder="Digite o lado (cm)" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if area is defined %}
+                Área = {{ area }} cm
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Calcular</button>
+        </form>
+
+        <h4>Perímetro</h4>
+        <form class="form-somar" action="{{ url_for('triangulo_perimetro') }}" method="post">
+            <label>
+                <input placeholder="Digite o lado (cm)" name="form-n1" class="form-control w-100">
+            </label>
+
+            <p class="resultado">
+                {% if perimetro is defined %}
+                Perimetro = {{ perimetro }} cm
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Calcular</button>
+        </form>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

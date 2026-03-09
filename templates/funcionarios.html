@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1>Funcionários</h1>
+
+<!-- Button trigger modal - MUDEI DE "submit" PRA "button" -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Novo Funcionário
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Novo Funcionário</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- ACTION CORRIGIDO para a rota certa -->
+                <form action="{{ url_for('cadastrar_funcionario') }}" method="post">
+                    <!-- ADICIONEI A DIV QUE FALTAVA pra organizar os campos -->
+                    <div class="mb-3">
+                        <label>Nome:</label>
+                        <input placeholder="Digite o nome" name="form-nome" class="form-control" required>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label>Data Nascimento:</label>
+                            <input type="date" name="form-data" class="form-control" required>
+                        </div>
+                        <div class="col">
+                            <label>CPF:</label>
+                            <input placeholder="Digite somente números" name="form-cpf" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email:</label>
+                        <input type="email" placeholder="Digite o email" name="form-email" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Senha:</label>
+                        <input type="password" placeholder="Digite a senha" name="form-senha" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Cargo:</label>
+                        <input placeholder="Digite o cargo" name="form-cargo" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Salário:</label>
+                        <input placeholder="Digite o salário" name="form-salario" class="form-control" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ADICIONEI ÁREA PRA MOSTRAR MENSAGENS FLASH -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert {{ category }} mt-3">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<table class="table table-striped mt-3">
+    <thead>
+    <tr>
+
+        <th>Nome</th>
+        <th>Data Nascimento</th>
+        <th>CPF</th>
+        <th>Email</th>
+        <th>Cargo</th>
+        <th>Salário</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Exemplo fixo -->
+    <tr>
+        <td>Lucas</td>
+        <td>02/05/1997</td>
+        <td>1234556789</td>
+        <td>lucas@gmail.com</td>
+        <td>Professor</td>
+        <td>R$ 1500,00</td>
+        <td><a href=""><i class="bi bi-pencil"></i></a> <a href=""><i class="bi bi-trash text-danger"></i></a></td>
+    </tr>
+
+    <!-- Dados do banco -->
+    {% for func in funcionarios %}
+    <tr>
+        <td>{{ func.nome }}</td>
+        <td>{{ func.data_nascimento }}</td>
+        <td>{{ func.cpf }}</td>
+        <td>{{ func.email }}</td>
+        <td>{{ func.cargo }}</td>
+        <td>R$ {{ func.salario }}</td>
+        <td>
+            <a href="#"><i class="bi bi-pencil"></i></a>
+            <a href="#"><i class="bi bi-trash text-danger"></i></a>
+        </td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+{% endblock %}

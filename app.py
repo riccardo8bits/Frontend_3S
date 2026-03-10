@@ -16,6 +16,13 @@ def home():
     return render_template("home.html")
 
 
+@app.route('/animais')
+def animais():
+    return render_template("animais.html")
+
+
+
+
 @app.route('/calculos')
 def calculos():
     return render_template("calculos.html")

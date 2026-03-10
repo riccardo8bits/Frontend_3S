@@ -19,9 +19,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <!-- ACTION CORRIGIDO para a rota certa -->
+
                 <form action="{{ url_for('cadastrar_funcionario') }}" method="post">
-                    <!-- ADICIONEI A DIV QUE FALTAVA pra organizar os campos -->
+
                     <div class="mb-3">
                         <label>Nome:</label>
                         <input placeholder="Digite o nome" name="form-nome" class="form-control" required>
@@ -68,7 +68,7 @@
     </div>
 </div>
 
-<!-- ADICIONEI ÁREA PRA MOSTRAR MENSAGENS FLASH -->
+
 {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
         {% for category, message in messages %}
@@ -91,7 +91,7 @@
     </tr>
     </thead>
     <tbody>
-    <!-- Exemplo fixo -->
+
     <tr>
         <td>Lucas</td>
         <td>02/05/1997</td>
@@ -102,7 +102,7 @@
         <td><a href=""><i class="bi bi-pencil"></i></a> <a href=""><i class="bi bi-trash text-danger"></i></a></td>
     </tr>
 
-    <!-- Dados do banco -->
+
     {% for func in funcionarios %}
     <tr>
         <td>{{ func.nome }}</td>

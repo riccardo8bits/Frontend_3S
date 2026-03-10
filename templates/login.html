@@ -28,18 +28,27 @@
     <div class="card p-4 shadow">
 
         <h2 class="text-center">Login</h2>
-        <form method="POST" class="d-flex flex-column">
+
+
+        <form method="POST" id="form-login" class="d-flex flex-column">
+
             <label class="my-2">
-                CPF:
-                <input placeholder="Digite o cargo" name="form-cpf" class="form-control w-100">
+                EMAIL:
+
+                <input id="form-email" placeholder="Digite o cargo" name="form-cpf" class="form-control w-100">
             </label>
 
             <label class="my-2">
                 Senha:
-                <input placeholder="Digite o senha" name="form-senha" class="form-control w-100">
+
+                <input id="form-senha" placeholder="Digite o senha" name="form-senha" class="form-control w-100">
             </label>
 
             <button type="submit" class="btn btn-info my-2">Entrar</button>
+
+
+            <a class="btn btn-danger w-100" onclick="LimpaInputLogin()">Cancelar</a>
+
         </form>
     </div>
 </div>
@@ -47,5 +56,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
+
+<script src="/static/js/vericacoes.js"></script>
+
 </body>
 </html>

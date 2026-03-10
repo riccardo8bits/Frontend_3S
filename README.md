@@ -31,5 +31,12 @@
 
 <img width="1918" height="855" alt="image" src="https://github.com/user-attachments/assets/828d2dc1-3f54-4a06-a1f2-7bf03cee257d" />
 
+# Animais
+
+<img width="1915" height="919" alt="Captura de tela 2026-03-10 081538" src="https://github.com/user-attachments/assets/804aa843-ec64-4be3-8dcc-ae76adf278bb" />
+
+
+
+
 
 

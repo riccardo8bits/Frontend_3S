@@ -1,0 +1,78 @@
+{% extends 'base.html'%}
+{% block conteudo %}
+
+ <div class="d-flex flex-column gap-4" data-purpose="breeds-list">
+
+
+{% if gatos%}
+
+{% for gato in gatos%}
+
+
+<article class="card card-breed" data-purpose="breed-card">
+            <div class="row g-0">
+                <div class="col-md-4 position-relative">
+                    <img alt="Abyssinian cat" class="w-100 h-100 object-fit-cover"
+                         src="{{ gato.image }}"
+                         style="min-height: 250px;"/>
+                    <div class="position-absolute top-0 start-0 m-3">
+                        <span class="origin-tag">Origin: {{gato.origin}}</span>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body p-4 p-lg-5 h-100 d-flex flex-column">
+                        <h2 class="card-title h3 fw-bold text-dark mb-3">{{gato.name}}</h2>
+                        <div class="mb-4">
+                            <h6 class="text-uppercase text-muted fw-bold small tracking-wider mb-2">Temperament</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                {% for temperamento in gato.temperament%}
+
+                                <span class="badge badge-warm">{{ temperamento }}</span>
+
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                        <p class="card-text text-muted small mb-4">
+                            {{gato.description}}
+                        </p>
+                        <!-- Traits Ratings (Only Energy Level as requested) -->
+                        <div class="mb-4 col-md-6" data-purpose="traits-ratings">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="trait-label">Energy Level</span>
+                                <span class="trait-value">{{gato.energy_level}}</span>
+                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="100"
+                                     class="progress-bar progress-bar-brown" role="progressbar"
+                                     style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <!-- Links -->
+                        <div class="mt-auto pt-4 border-top d-flex align-items-center justify-content-between">
+                            <a class="text-brand-brown fw-bold text-decoration-none small" href="#">Wikipedia</a>
+                            <a class="btn btn-outline-brand btn-sm px-3 fw-medium" href="#">Vetstreet Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    {% endfor %}
+
+
+    {% else %}
+    <h3>No Gatos Available</h3>
+    {% endif %}
+
+
+    <!-- BEGIN: BreedsList -->
+    <div class="d-flex flex-column gap-4" data-purpose="breeds-list">
+        <!-- Breed Card 1: Abyssinian -->
+
+        <!-- Breed Card 2: Bengal -->
+
+    </div>
+
+
+    {% endblock %}

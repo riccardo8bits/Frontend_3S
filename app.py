@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
+
+from api_routes import routes
 from database import db_session, Usuario, Funcionario
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -154,6 +156,33 @@ def cadastrar_funcionario():
 
         flash(f"Funcionário {nome} cadastrado!", 'alert-success')
         return redirect(url_for('funcionarios'))
+
+
+
+
+
+@app.route('/gatos')
+def listar_gatos():
+    gatos = routes.get_gatos()
+
+    for gato in gatos:
+        gato["temperament"] = gato["temperament"].split(',')
+        gato["image"] = routes.get_image()["url"]
+
+
+
+    return render_template("gatos.html", gatos=gatos)
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':

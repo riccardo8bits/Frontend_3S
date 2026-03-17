@@ -36,7 +36,5 @@
 <img width="1915" height="919" alt="Captura de tela 2026-03-10 081538" src="https://github.com/user-attachments/assets/804aa843-ec64-4be3-8dcc-ae76adf278bb" />
 
 
-
-
-
+# Informações de gatos
 
